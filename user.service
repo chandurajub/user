@@ -1,0 +1,13 @@
+[Unit]
+Description=Node.js User Service
+
+[Service]
+User=user
+ExecStart=/bin/node /home/user/user/server.js
+Restart=always
+RestartSec=10
+StandardOutput=append:/var/log/robo-shop/user.log
+StandardError=append:/var/log/robo-shop/user.log
+SyslogIdentifier=user
+[Install]
+WantedBy=multi-user.target
